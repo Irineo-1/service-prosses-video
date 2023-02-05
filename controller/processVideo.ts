@@ -1,8 +1,10 @@
 import { Request, Response } from "express"
 
-const processVideo = (_req: Request, res: Response) =>
+const processVideo = (req: Request, res: Response) =>
 {
-    res.send("que tal")
+    console.log("files ============> ", req.files)
+    console.log("data ==============> ", req.body)
+    res.status(200).send("que tal")
 }
 
 export { processVideo }
