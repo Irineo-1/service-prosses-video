@@ -10,5 +10,5 @@ app.use(cors)
 app.use(express.json())
 
 app.listen(port, () => {
-    console.log("ejecutandoce en el puerto: ", port)
+    console.log("servicion process video en el puerto: ", port)
 })
