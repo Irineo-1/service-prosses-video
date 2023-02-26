@@ -10,8 +10,8 @@ const processVideo = async (req: Request, res: Response) =>
     let ramdomFinalName: string = uuidv4()
     let ramdomBlob: string = uuidv4()
 
-    const route_blobs = `./temparalVideos/${ramdomBlob}`
-    const route_Video = `./temparalVideos/${ramdomFinalName}`
+    const route_blobs = `./temporalvideos/${ramdomBlob}`
+    const route_Video = `./temporalvideos/${ramdomFinalName}`
 
     const FileData: fileData = req.body
 
@@ -39,7 +39,7 @@ const processVideo = async (req: Request, res: Response) =>
         ls.on("close", code => {
             console.log(`child process exited with code ${code}`)
             fs.unlinkSync(route_blobs)
-            res.status(200).send(ramdomFinalName)
+            res.send(`${ramdomFinalName}.${FileData.Extencion}`).status(200)
         })
     })
 }
